@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: black-ronzer-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn api:app --bind 0.0.0.0:$PORT --workers 1
+    envVars:
+      - key: TELEGRAM_BOT
+        value: 8802770166:AAFZxGz4M9QpY7iUQC8auLfN4H7gO_CEdHQ
+      - key: TELEGRAM_CHAT
+        value: "6916557418"
+      - key: WALLET
+        value: 0xa1CfD4F8B777d8a244B9859eE0efB290756Ed7a5
+      - key: IMMUNEFI_USER
+        value: Rafaela44069
